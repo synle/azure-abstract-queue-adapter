@@ -1,0 +1,23 @@
+{
+  "name": "azure-abstract-queue-adapter",
+  "version": "1.0.0",
+  "description": "Abstract Queue Adapter for Azure Storage Queue and Azure Message Bus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synle/azure-abstract-queue-adapter.git"
+  },
+  "author": "Sy Le",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synle/azure-abstract-queue-adapter/issues"
+  },
+  "homepage": "https://github.com/synle/azure-abstract-queue-adapter#readme",
+  "dependencies": {
+    "azure": "^2.2.1-preview",
+    "azure-storage": "^2.8.1"
+  }
+}
