@@ -1,6 +1,6 @@
 {
   "name": "azure-abstract-queue-adapter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Abstract Queue Adapter for Azure Storage Queue and Azure Message Bus",
   "main": "index.js",
   "scripts": {

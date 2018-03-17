@@ -5,7 +5,7 @@ var adapterAzureStorageQueue = require('./adapter-azure-storage-queue.js');
 // this is mainly for json...
 var createJsonMessage = function(queueName, queueMessage){
     queueMessage = JSON.stringify(queueMessage || {});
-    this.createPlainMessage(queueMessage);
+    this.createPlainMessage(queueName, queueMessage);
 };
 
 adapterAzureServiceBusMessage.createJsonMessage = createJsonMessage.bind(adapterAzureServiceBusMessage);
