@@ -1,0 +1,1 @@
+# azure-abstract-queue-adapter
