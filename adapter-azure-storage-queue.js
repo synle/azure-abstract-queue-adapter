@@ -61,6 +61,6 @@ const _dequeueAzureStorageMessage = async (queueName) => {
 
 module.exports = {
     createQueue: _createAzureStorageQueue,
-    enqueuePlainMessage: _enqueueAzureStorageMessage,
-    dequeuePlainMessage: _dequeueAzureStorageMessage
+    createPlainMessage: _enqueueAzureStorageMessage,
+    getMessage: _dequeueAzureStorageMessage
 }

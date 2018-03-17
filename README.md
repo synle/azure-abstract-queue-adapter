@@ -23,4 +23,37 @@ npm install --save azure-abstract-queue-adapter
 
 ## To Use
 ```
+var AzureAbstractQueueAdapter = require('azure-abstract-queue-adapter');
+var queueA = new AzureAbstractQueueAdapter('azureStorageQueue');
+var queueB = new AzureAbstractQueueAdapter('azureServiceBusMessage');
+```
+
+
+## Reference
+```
+createQueue
+    Inputs:
+        queueName, queueOptions
+    Outputs:
+        Promise
+...
+createPlainMessage
+    Inputs:
+        queueName, queueMessage
+    Outputs:
+        Promise
+
+createJsonMessage
+    Inputs:
+        queueName, queueMessage
+    Outputs:
+        Promise
+...
+getMessage
+    Inputs:
+        queueName
+    Outputs:
+        Promise
+            messageText
+            messageJson
 ```

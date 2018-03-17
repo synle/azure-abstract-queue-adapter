@@ -55,6 +55,6 @@ const _dequeueAzureServiceBusMessage = async (queueName) => {
 
 module.exports = {
     createQueue: _createAzureServiceBusQueue,
-    enqueuePlainMessage: _enqueueAzureServiceBusMessage,
-    dequeuePlainMessage: _dequeueAzureServiceBusMessage
+    createPlainMessage: _enqueueAzureServiceBusMessage,
+    getMessage: _dequeueAzureServiceBusMessage
 }
