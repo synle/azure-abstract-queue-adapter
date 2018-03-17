@@ -1,3 +1,6 @@
+const azureCore = require('azure');
+const queueAzureServiceBusSvc = azureCore.createServiceBusService();
+
 // azure message bus queue
 const _createAzureServiceBusQueue = async (queueName, queueOptions) =>{
     return new Promise((resolve, reject) => {

@@ -1,3 +1,6 @@
+const azureStorage = require('azure-storage');
+const queueAzureStorageSvc = azureStorage.createQueueService();
+
 const _createAzureStorageQueue = async (queueName, queueOptions) =>{
     return new Promise((resolve, reject) => {
         queueAzureStorageSvc.createQueueIfNotExists(queueName, function(error, result, response){
