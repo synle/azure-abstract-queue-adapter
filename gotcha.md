@@ -1,5 +1,6 @@
 ## Clear / Clean up Azure Message Service Bus Dead Letter Queue
 Dead Letter Queue is stored in the sub-queue called `${queueName}/$DeadLetterQueue`
+Source: https://medium.com/@DomBurf/clearing-the-dead-letter-queue-on-an-azure-service-bus-queue-3c942b312f98
 ```
 var azure = require('azure');
 var serviceBusService = azure.createServiceBusService();
