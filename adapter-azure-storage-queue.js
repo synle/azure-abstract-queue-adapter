@@ -16,7 +16,7 @@ const _createAzureStorageQueue = async (queueName, queueOptions) =>{
     });
 }
 
-const _enqueueAzureStorageMessage = async (queueName, queueMessage) => {
+const _enqueueAzureStorageMessage = async (queueName, queueMessage, queueMessageId) => {
     return new Promise((resolve, reject) => {
         // api: https://azure.github.io/azure-storage-node/QueueService.html#createMessage__anchor
         queueAzureStorageSvc.createMessage(
