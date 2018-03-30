@@ -19,15 +19,27 @@ const _createAzureServiceBusQueue = async (queueName, queueOptions) =>{
     });
 }
 
-const _enqueueAzureServiceBusMessage = async (queueName, queueMessage) => {
+const _enqueueAzureServiceBusMessage = async (queueName, queueMessage, queueMessageId) => {
+    // api: http://azure.github.io/azure-sdk-for-node/azure-sb/latest/ServiceBusService.html#sendQueueMessage
+    
     return new Promise((resolve, reject) => {
-        queueAzureServiceBusSvc.sendQueueMessage(queueName, queueMessage, function(error){
-            if(!error){
-                resolve();
-            } else{
-                reject();
+        queueAzureServiceBusSvc.sendQueueMessage(
+            queueName, 
+            {
+                body: queueMessage,
+                brokerProperties: {
+                    // TODO: this propery is a way to dedup messages within azure service bus...
+                    MessageId: queueMessageId || queueMessage || Date.now(), 
+                },
+            },
+            function(error){
+                if(!error){
+                    resolve();
+                } else{
+                    reject();
+                }
             }
-        });
+        );
     });
 }
 
