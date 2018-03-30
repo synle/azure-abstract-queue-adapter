@@ -18,14 +18,19 @@ const _createAzureStorageQueue = async (queueName, queueOptions) =>{
 
 const _enqueueAzureStorageMessage = async (queueName, queueMessage) => {
     return new Promise((resolve, reject) => {
-        queueAzureStorageSvc.createMessage(queueName, queueMessage, function(error, result, response){
-            if(!error){
-                resolve(result);
-            } else {
-                console.error('[Create Queue Message] Error', queueName, queueMessage, error);
-                reject(error);
+        // api: https://azure.github.io/azure-storage-node/QueueService.html#createMessage__anchor
+        queueAzureStorageSvc.createMessage(
+            queueName, 
+            queueMessage, 
+            function(error, result, response){
+                if(!error){
+                    resolve(result);
+                } else {
+                    console.error('[Create Queue Message] Error', queueName, queueMessage, error);
+                    reject(error);
+                }
             }
-        });
+        );
     });
 }
 
