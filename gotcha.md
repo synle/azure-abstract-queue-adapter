@@ -1,10 +1,8 @@
-Clear / Clean up Azure Message Service Bus Dead Letter Queue
+## Clear / Clean up Azure Message Service Bus Dead Letter Queue
+Dead Letter Queue is stored in the sub-queue called `${queueName}/$DeadLetterQueue`
 ```
 var azure = require('azure');
-var _ = require('lodash');
 var serviceBusService = azure.createServiceBusService();
-
-var count = 1;
 
 async function _purgeDeadLetterQueue(queueName){
     return new Promise(resolve => {
@@ -14,13 +12,6 @@ async function _purgeDeadLetterQueue(queueName){
                 process.exit();
                 return;
             }
-            console.log(
-                [
-                    count++,
-                    _.get(receivedMessage, 'brokerProperties.EnqueuedTimeUtc'),
-                    _.get(receivedMessage, 'body'),
-                ].join(' - ')
-            );
             resolve();
         });
     });
