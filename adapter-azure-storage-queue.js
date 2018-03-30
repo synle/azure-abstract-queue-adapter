@@ -21,7 +21,10 @@ const _enqueueAzureStorageMessage = async (queueName, queueMessage, queueMessage
         // api: https://azure.github.io/azure-storage-node/QueueService.html#createMessage__anchor
         queueAzureStorageSvc.createMessage(
             queueName, 
-            queueMessage, 
+            queueMessage,
+            {
+                clientRequestId: queueMessageId || queueMessage || Date.now(),
+            },
             function(error, result, response){
                 if(!error){
                     resolve(result);
